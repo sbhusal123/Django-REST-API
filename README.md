@@ -1,2 +1,2 @@
 # Django-REST-API
-learning django
+learning django rest api
