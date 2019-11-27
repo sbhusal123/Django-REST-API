@@ -3,7 +3,8 @@ from django.contrib.auth import get_user_model
 
 """
 Get User model: https://docs.djangoproject.com/en/2.1/topics/auth/customizing/#django.contrib.auth.get_user_model
-"""
+""" # noqa
+
 
 class ModelTests(TestCase):
 
