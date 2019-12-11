@@ -1,9 +1,14 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-
+from core import models
 """
 Get User model: https://docs.djangoproject.com/en/2.1/topics/auth/customizing/#django.contrib.auth.get_user_model
 """ # noqa
+
+
+def sample_user(email="test@surya.com", password="test123"):
+    """Create a sample user"""
+    return get_user_model().objects.create_user(email, password)
 
 
 class ModelTests(TestCase):
@@ -44,3 +49,11 @@ class ModelTests(TestCase):
 
         # superuser privilage is included in PermissionMixins Class
         self.assertTrue(user.is_superuser)
+
+    def test_tag_str(self):
+        """Test the tage string representation"""
+        tag = models.Tag.objects.create(
+            user=sample_user(),
+            name='Vegan'
+        )
+        self.assertAlmostEqual(str(tag), tag.name)
