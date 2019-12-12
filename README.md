@@ -8,3 +8,5 @@ learning django rest api
 [Idempotency](https://restfulapi.net/idempotent-rest-apis/)
 
 [Detail Description of Class based views](http://www.cdrf.co/)
+
+[Viewsets Action](https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions)
