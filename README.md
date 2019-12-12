@@ -10,3 +10,5 @@ learning django rest api
 [Detail Description of Class based views](http://www.cdrf.co/)
 
 [Viewsets Action](https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions)
+
+[Serializer Primary Key Related Fields](https://www.django-rest-framework.org/api-guide/relations/#primarykeyrelatedfield)
