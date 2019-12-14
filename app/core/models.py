@@ -1,3 +1,5 @@
+import uuid
+import os
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                                         PermissionsMixin
@@ -9,6 +11,14 @@ BaseUserManager: https://docs.djangoproject.com/en/2.1/topics/auth/customizing/#
 Abstract base classes: https://docs.djangoproject.com/en/2.2/topics/db/models/#abstract-base-classes
 Writing a manager for a custom user model: https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#writing-a-manager-for-a-custom-user-model
 """ # noqa
+
+
+def recipe_image_file_path(instance, filename):
+    """Generate file path for new recipe"""
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+
+    return os.path.join('uploads/recipe/', filename)
 
 
 class UserManager(BaseUserManager):
@@ -78,6 +88,7 @@ class Recipe(models.Model):
     link = models.CharField(max_length=255, blank=True)
     ingredient = models.ManyToManyField('Ingredient')
     tags = models.ManyToManyField('Tag')
+    images = models.ImageField(null=True, upload_to=recipe_image_file_path)
 
     def __str__(self):
         return self.title

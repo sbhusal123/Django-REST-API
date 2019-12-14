@@ -12,3 +12,5 @@ learning django rest api
 [Viewsets Action](https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions)
 
 [Serializer Primary Key Related Fields](https://www.django-rest-framework.org/api-guide/relations/#primarykeyrelatedfield)
+
+[UUID4 - generate unique id](https://docs.python.org/3/library/uuid.html#uuid.uuid4)
